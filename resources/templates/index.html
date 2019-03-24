@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang=en xmlns:th="http://www.springframework.org/schema/mvc"><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>四六级信息预存</title><style>*{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        body {
+            font-size: 0.16rem;
+        }
+        @font-face {
+            font-family: tiaotiao;
+            src: url('http://127.0.0.1/cetsearch/js/tiaotiao.ttf');
+        }</style><script>window.onload = function () {
+            Rem(750, 100);
+        }
+        window.onresize = function () {
+            Rem(750, 100);
+        }
+        function Rem(size, ppr) {
+            const html = document.querySelector('html');
+            const width = html.clientWidth;
+            html.style.fontSize = width / size * ppr + 'px';
+        }</script><script th:src="@{http://127.0.0.1/cetsearch/js/config.js}"></script><link th:href="@{http://127.0.0.1/cetsearch/css/app.47909bc8.css}" rel=preload as=style><link th:href="@{http://127.0.0.1/cetsearch/js/app.01c60bb5.js}" rel=preload as=script><link th:href="@{http://127.0.0.1/cetsearch/js/chunk-vendors.ac958ebf.js}" rel=preload as=script><link th:href="@{http://127.0.0.1/cetsearch/css/app.47909bc8.css}" rel=stylesheet></head><body><noscript><strong>We're sorry but cet-query doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script th:src="@{http://127.0.0.1/cetsearch/js/chunk-vendors.ac958ebf.js}"></script><script th:src="@{http://127.0.0.1/cetsearch/js/app.01c60bb5.js}"></script></body></html>

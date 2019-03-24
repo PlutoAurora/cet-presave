@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>cet-query</title>
-  </head>
-  <body>
+    <title>四六级信息预存</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        body {
+            font-size: 0.16rem;
+        }
+        @font-face {
+            font-family: tiaotiao;
+            src: url('tiaotiao.ttf');
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            Rem(750, 100);
+        }
+        window.onresize = function () {
+            Rem(750, 100);
+        }
+        function Rem(size, ppr) {
+            const html = document.querySelector('html');
+            const width = html.clientWidth;
+            html.style.fontSize = width / size * ppr + 'px';
+        }
+    </script>
+    <script src="./config.js"></script>
+</head>
+
+<body>
     <noscript>
-      <strong>We're sorry but cet-query doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+        <strong>We're sorry but cet-query doesn't work properly without JavaScript enabled. Please enable it to
+            continue.</strong>
     </noscript>
     <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+</body>
+
 </html>
