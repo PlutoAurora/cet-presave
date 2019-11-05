@@ -7,11 +7,11 @@ window.g = {
         imgUrl: '',
         desc: '这是一个示例',
         type: '',
-        success: function() {
-            console.log('分享成功');
+        success: function () {
+            // console.log('分享成功');
         },
-        cancel: function() {
-            console.log('取消分享');
+        cancel: function () {
+            // console.log('取消分享');
         }
     }
 }
