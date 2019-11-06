@@ -37,17 +37,18 @@
         }
     </script>
     <script src="./config.js"></script>
-    <script src='http://res.wx.qq.com/open/js/jweixin-1.4.0.js'></script>
+    <script src='https://res.wx.qq.com/open/js/jweixin-1.4.0.js'></script>
     <script src='https://wx.idsbllp.cn/wx-api/share.js'></script>
     <script src="./js_sign.js"></script>
     <script>
-        const token = document.location.hash.split('#/?token=')[1]
+        var token = document.location.href.split('?token=')[1]
         if (!localStorage.getItem('token_cet')) {
             window.location.href =
-                'https://wx.redrock.team/MagicLoop/index.php?s=/addon/Api/Api/oauth&redirect=http://mhm66z.natappfree.cc/enter'
+                'https://wx.redrock.team/magicloop/rushb?b=' + encodeURI(
+                    'https://wx.redrock.team/wxapi/cetpre/enter') + '&scope=tmpbase'
         }
         if (token && token.length) {
-            document.location.hash = '#/'
+            document.location.href = 'https://wx.redrock.team/game/cet_presave/'
             localStorage.setItem('token_cet', token)
         }
     </script>

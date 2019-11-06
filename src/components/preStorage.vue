@@ -27,8 +27,6 @@
 </template>
 
 <script>
-import wx from "weixin-js-sdk"; //一定要加
-
 export default {
   props: {
     info: {
@@ -55,26 +53,27 @@ export default {
     selectImage: function() {
       if (this.haveSign) {
         const self = this;
-        wx.chooseImage({
+        console.log(window.wx);
+        window.wx.chooseImage({
           count: 1,
           sizeType: ["compressed"],
           sourceType: ["album", "camera"],
           success: function(res) {
             self.info.currentComponent = "waitLoad";
             let localIds = res.localIds;
-            wx.getLocalImgData({
+            window.wx.getLocalImgData({
               localId: localIds[0],
               success: function(res) {
                 let localData = res.localData; // localData是图片的base64数据，可以用img标签显示
                 let form = new FormData();
-                form.append("img", localData);
+                form.append("file", localData);
                 self.axios
                   .post(
-                    `http://mhm66z.natappfree.cc/message/ocr_base64`,
-                    { data: form },
+                    `https://wx.redrock.team/wxapi/cetpre/message/preset/ocr_base64`,
+                    form,
                     {
                       headers: {
-                        Authorization: window.localStorage.getItem(token_cet)
+                        Authorization: window.localStorage.getItem("token_cet")
                       }
                     }
                   )
@@ -128,7 +127,12 @@ export default {
       }
     }
   },
-  mounted() {}
+  mounted() {
+    const self = this;
+    window.WXSHARE.ready(function() {
+      self.haveSign = true;
+    });
+  }
 };
 </script>
 

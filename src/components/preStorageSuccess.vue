@@ -51,10 +51,12 @@ export default {
       formData.append("username", this.info.message.name);
       formData.append("admission_card_id", this.info.message.ticket);
       this.axios
-        .post(
-          `http://mhm66z.natappfree.cc/message/input`,
+        .get(
+          `https://wx.redrock.team/wxapi/cetpre/message/preset/input`,
           { data: formData },
-          { headers: { Authorization: window.localStorage.getItem(token_cet) } }
+          {
+            headers: { Authorization: window.localStorage.getItem("token_cet") }
+          }
         )
         .then(res => {
           this.info.currentComponent = "submitSuccess";

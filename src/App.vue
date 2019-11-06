@@ -37,8 +37,8 @@ export default {
   mounted() {
     // 如果用户预存过，就返回信息界面 ，没有预存过，就到预存界面
     this.axios
-      .post(`http://mhm66z.natappfree.cc/message/get`, {
-        headers: { Authorization: window.localStorage.getItem(token_cet) }
+      .get(`https://wx.redrock.team/wxapi/cetpre/message/preset/get`, {
+        headers: { Authorization: window.localStorage.getItem("token_cet") }
       })
       .then(res => {
         let message = res.data.data;

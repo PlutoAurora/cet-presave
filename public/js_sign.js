@@ -1,5 +1,5 @@
 var option = {
-    // debug:false,
+    debug: false,
     jsApiList: [
         'chooseImage',
         'getLocalImgData',
@@ -13,5 +13,5 @@ var option = {
     ]
 }
 window.WXSHARE.config(option)
-// console.log(window.WXSHARE)
+
 
